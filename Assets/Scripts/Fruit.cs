@@ -8,6 +8,7 @@ public class Fruit : MonoBehaviour
 {
     // This will helps us choose which fruit to be appear (Drop Down Menu)
     [SerializeField] private FruitType fruitType;
+    [SerializeField] private GameObject pickupVfx;
 
     private GameManager gameManager;
     private Animator anim;
@@ -52,6 +53,14 @@ public class Fruit : MonoBehaviour
         {
             gameManager.AddFruit();
             Destroy(gameObject);
+
+            // This Fx will be appear on the fruit since we write this code on the Fruits.cs
+            // Quaternion.identity: don't change the rotation.
+            GameObject newFx = Instantiate(pickupVfx,transform.position,Quaternion.identity);
+
+            // There is no need for writing a time in here because we used animation event, even if we write 5 in here it will destroy itself
+            // once the animation is completed.
+            // Destroy(newFx, .5f);
         }
 
     }
