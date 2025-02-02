@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7672349378309206323}
   - component: {fileID: 5205590337645295875}
   m_Layer: 0
-  m_Name: Fruit
+  m_Name: Fruit - Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd5cabd0b2c0b940bdb217f25cf6453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fruitType: 0
 --- !u!58 &5205590337645295875
 CircleCollider2D:
   m_ObjectHideFlags: 0

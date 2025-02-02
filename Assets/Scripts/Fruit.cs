@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum FruitType {Apple, Banana, Cherry, Kiwi, Melon, Orange, Pineapple, Strawberry}
+
 public class Fruit : MonoBehaviour
 {
+    // This will helps us choose which fruit to be appear (Drop Down Menu)
+    [SerializeField] private FruitType fruitType;
+
     private GameManager gameManager;
     private Animator anim;
 
@@ -21,8 +26,14 @@ public class Fruit : MonoBehaviour
 
     private void SetRandomLookIfNeeded()
     {
+        // Checks whether fruits to have random look or not from game manager.
         if (gameManager.fruitsHaveRandomLook == false)
         {
+            /// <summary>
+            /// If this part runs, that means we want a single type of fruit to be appear in our game 
+            /// Check <see cref="UpdateFruitVisuals"/> and <see cref="FruitType"/> for a further look.
+            /// </summary>
+            UpdateFruitVisuals();
             return;
         }
 
@@ -30,6 +41,8 @@ public class Fruit : MonoBehaviour
         int randomIndex = Random.Range(0, 8);
         anim.SetFloat("fruitIndex", randomIndex);
     }
+
+    private void UpdateFruitVisuals() => anim.SetFloat("fruitIndex", (int)fruitType);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

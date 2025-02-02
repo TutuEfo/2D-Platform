@@ -379,7 +379,9 @@ public class Player : MonoBehaviour
 /// if the answer is yes yModifer = 1
 /// if the answer is no yModifer = 0.5f
 /// 
+/// 2) Changing the name of the function from everywhere:
 /// 
+/// if you want to change your function name you can press, ctrl + R + R and rename it anything you want. (Refactor.Rename)
 /// 
 /// 
 /// </summary>
