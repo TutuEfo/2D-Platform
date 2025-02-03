@@ -8,12 +8,16 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private CapsuleCollider2D cd;
+
+    private bool canBeControlled = false;
 
     // You can only use header, if there is visible below it so you need to use "public" or "[SerializeField] private"
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float doubleJumpForce;
+    private float defaultGravityScale;
     private bool canDoubleJump;
 
     [Header("Buffer & Coyote Jump")]
@@ -43,18 +47,27 @@ public class Player : MonoBehaviour
     private bool isAirbone;
     private bool isWallDetected;
 
-
     private float xInput;
     private float yInput;
 
     private bool facingRight = true;
     private int facingDirection = 1;
+
+    [Header("VFX")]
+    [SerializeField] private GameObject deathVfx;
  
     private void Awake()
     {
         // Since we made the Rigidbody2D private, we use this to get the component of the rigid body to the player automatically.
         rb = GetComponent<Rigidbody2D>();
+        cd = GetComponent<CapsuleCollider2D>();
         anim = GetComponentInChildren<Animator>();
+    }
+
+    private void Start()
+    {
+        defaultGravityScale = rb.gravityScale;
+        RespawnFinished(false);
     }
 
     private void Update()
@@ -63,6 +76,11 @@ public class Player : MonoBehaviour
 
         UpdateAirborneStatus();
         
+        if (canBeControlled == false)
+        {
+            return;
+        }
+
         if (isKnocked)
         {
             return;
@@ -74,6 +92,23 @@ public class Player : MonoBehaviour
         HandleFlip();
         HandleCollision();
         HandleAnimations();
+    }
+
+    public void RespawnFinished(bool finished)
+    {
+        if (finished)
+        {
+            rb.gravityScale = defaultGravityScale;
+            canBeControlled = true;
+            cd.enabled = true;
+        }
+        else
+        {
+            rb.gravityScale = 0;
+            canBeControlled = false;
+            // To not get knockbacked when spawned.
+            cd.enabled = false;
+        }
     }
 
     public void Knockback()
@@ -96,6 +131,12 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(knockbackDuration);
 
         isKnocked = false;
+    }
+
+    public void Die()
+    {
+        GameObject newFx = Instantiate(deathVfx,transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     private void UpdateAirborneStatus()

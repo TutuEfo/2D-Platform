@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DamageTrigger : MonoBehaviour
@@ -19,9 +20,11 @@ public class DamageTrigger : MonoBehaviour
 
         Player player = collision.gameObject.GetComponent<Player>();
 
-        // Same as if (player != NULL)
-        player?.Knockback();
-        
+        // Same as player?.Knockback();
+        if (player != null)
+        {
+            player.Knockback();
+        }
 
     }
 }
