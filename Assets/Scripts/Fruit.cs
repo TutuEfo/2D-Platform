@@ -28,7 +28,7 @@ public class Fruit : MonoBehaviour
     private void SetRandomLookIfNeeded()
     {
         // Checks whether fruits to have random look or not from game manager.
-        if (gameManager.fruitsHaveRandomLook == false)
+        if (gameManager.fruitsAreRandom == false)
         {
             /// <summary>
             /// If this part runs, that means we want a single type of fruit to be appear in our game 
