@@ -15,7 +15,10 @@ public class GameManager : MonoBehaviour
     [Header("Fruits Management")]
     public bool fruitsAreRandom;
     public int fruitsCollected;
-    public int totalFruits
+    public int totalFruits;
+
+    [Header("Checkpoints")]
+    public bool canReactivate;
 
     private void Awake()
     {
