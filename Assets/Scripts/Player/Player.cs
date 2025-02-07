@@ -111,8 +111,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Knockback()
+    public void Knockback(float sourceDamageXPosition)
     {
+        float knockbackDir = 1;
+
+        if (transform.position.x < sourceDamageXPosition)
+        {
+            knockbackDir = -1;
+        }
+
         // Can't be knocked twice.
         if (isKnocked)
         {
@@ -120,17 +127,18 @@ public class Player : MonoBehaviour
         }
 
         StartCoroutine(KnockbackRoutine());
-        anim.SetTrigger("knockback");
-        rb.velocity = new Vector2(knockbackPower.x * -facingDirection, knockbackPower.y);
+        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
     }
 
     private IEnumerator KnockbackRoutine()
     {
         isKnocked = true;
+        anim.SetBool("isKnocked", true);
 
         yield return new WaitForSeconds(knockbackDuration);
 
         isKnocked = false;
+        anim.SetBool("isKnocked", false);
     }
 
     public void Die()
