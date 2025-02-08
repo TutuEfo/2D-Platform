@@ -78,6 +78,8 @@ public class Player : MonoBehaviour
         
         if (canBeControlled == false)
         {
+            HandleAnimations();
+            HandleCollision();
             return;
         }
 
@@ -145,6 +147,24 @@ public class Player : MonoBehaviour
     {
         GameObject newFx = Instantiate(deathVfx,transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public void Push(Vector2 direction, float duration = 0)
+    {
+        StartCoroutine(PushCoroutine(direction, duration));
+    }
+
+    private IEnumerator PushCoroutine(Vector2 direction, float duration)
+    {
+        canBeControlled = false;
+
+        rb.velocity = Vector2.zero;
+        // Adds instant velocity to the player.
+        rb.AddForce(direction, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(duration);
+
+        canBeControlled = true;
     }
 
     private void UpdateAirborneStatus()
@@ -248,7 +268,7 @@ public class Player : MonoBehaviour
 
     private void WallJump()
     {
-        canDoubleJump = false;
+        canDoubleJump = true;
 
         rb.velocity = new Vector2(wallJumpForce.x * -facingDirection, wallJumpForce.y);
         

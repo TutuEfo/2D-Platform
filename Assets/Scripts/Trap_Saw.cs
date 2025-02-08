@@ -11,7 +11,10 @@ public class Trap_Saw : MonoBehaviour
     [SerializeField] private float cooldown = 1;
     [SerializeField] private Transform[] wayPoint;
 
+    private Vector3[] wayPointPosition;
+
     public int wayPointIndex = 1;
+    public int moveDirection = 1;
     private bool canMove = true;
 
     private void Awake()
@@ -22,7 +25,21 @@ public class Trap_Saw : MonoBehaviour
 
     private void Start()
     {
-        transform.position = wayPoint[0].position;
+        UpdateWaypointsInfo();
+
+        transform.position = wayPointPosition[0];
+    }
+
+    private void UpdateWaypointsInfo()
+    {
+        // We are doing this because we want to add saw trap to the prefab folder but we can't add its waypoints on it, also if we try to add waypoints as a children
+        // it will create a mess in hierarchy.
+        wayPointPosition = new Vector3[wayPoint.Length];
+
+        for (int i = 0; i < wayPoint.Length; i++)
+        {
+            wayPointPosition[i] = wayPoint[i].position;
+        }
     }
 
     private void Update()
@@ -35,17 +52,25 @@ public class Trap_Saw : MonoBehaviour
         }
 
         // We use "moveSpeed * Time.deltaTime" for a smooth and a frame independent movement.
-        transform.position = Vector2.MoveTowards(transform.position, wayPoint[wayPointIndex].position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, wayPointPosition[wayPointIndex], moveSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, wayPoint[wayPointIndex].position) < .1f)
+        if (Vector2.Distance(transform.position, wayPointPosition[wayPointIndex]) < .1f)
         {
-            wayPointIndex++;
+            /// Older way for 2 waypoints:
+            /// wayPointIndex++;
+            /// if (wayPointIndex >= wayPoint.Length)
+            /// {
+            ///    wayPointIndex = 0;
+            ///    StartCoroutine(StopMovement(cooldown));
+            /// }
 
-            if (wayPointIndex >= wayPoint.Length)
+            if (wayPointIndex == wayPointPosition.Length - 1 || wayPointIndex == 0)
             {
-                wayPointIndex = 0;
+                moveDirection = moveDirection * -1;
                 StartCoroutine(StopMovement(cooldown));
             }
+
+            wayPointIndex = wayPointIndex + moveDirection;
         }
     }
 
