@@ -233,9 +233,9 @@ MonoBehaviour:
   doubleJumpForce: 11
   bufferJumpWindow: 0.25
   coyoteJumpWindow: 0.2
-  wallJumpDuration: 0.45
+  wallJumpDuration: 0.65
   wallJumpForce: {x: 9, y: 15}
-  knockbackDuration: 0.65
+  knockbackDuration: 0.75
   knockbackPower: {x: 5, y: 7}
   groundCheckDistance: 0.78
   wallCheckDistance: 0.65

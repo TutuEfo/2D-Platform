@@ -32,6 +32,18 @@ public class Trap_Saw : MonoBehaviour
 
     private void UpdateWaypointsInfo()
     {
+        List<Trap_SawWaypoint> wayPointList = new List<Trap_SawWaypoint>(GetComponentsInChildren<Trap_SawWaypoint>());
+
+        if (wayPointList.Count != wayPoint.Length)
+        {
+            wayPoint = new Transform[wayPointList.Count];
+
+            for (int i = 0;  i < wayPointList.Count; i++)
+            {
+                wayPoint[i] = wayPointList[i].transform;
+            }
+        }
+
         // We are doing this because we want to add saw trap to the prefab folder but we can't add its waypoints on it, also if we try to add waypoints
         // as a children it will create a mess in hierarchy.
         wayPointPosition = new Vector3[wayPoint.Length];
