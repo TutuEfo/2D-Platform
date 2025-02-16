@@ -41,8 +41,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float wallCheckDistance;
     /// <summary>
     /// LayerMask helps us to get the list of layers, so that we can work with <see cref="isGrounded"/>
-    /// </summary>
-    [SerializeField] private LayerMask whatIsGround;                
+    /// </summary
+    [SerializeField] private LayerMask whatIsGround;
+    [Space]
+    [SerializeField] private Transform enemyCheck;
+    [SerializeField] private float enemyCheckRadius;
+    [SerializeField] private LayerMask whatIsEnemy;
     private bool isGrounded;
     private bool isAirbone;
     private bool isWallDetected;
@@ -88,12 +92,34 @@ public class Player : MonoBehaviour
             return;
         }
 
+        HandleEnemyDetection();
         HandleInput();
         HandleWallSlide();
         HandleMovement();
         HandleFlip();
         HandleCollision();
         HandleAnimations();
+    }
+
+    private void HandleEnemyDetection()
+    {
+        if (rb.velocity.y >= 0)
+        {
+            return;
+        }
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(enemyCheck.position, enemyCheckRadius, whatIsEnemy);
+
+        foreach (var enemy in colliders)
+        {
+            Enemy newEnemy = enemy.GetComponent<Enemy>();
+
+            if (newEnemy != null)
+            {
+                newEnemy.Die();
+                Jump();
+            }
+        }
     }
 
     public void RespawnFinished(bool finished)
@@ -378,6 +404,7 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.DrawWireSphere(enemyCheck.position, enemyCheckRadius);
         Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheckDistance));
         Gizmos.DrawLine(transform.position, new Vector2(transform.position.x + (wallCheckDistance * facingDirection), transform.position.y));
     }
