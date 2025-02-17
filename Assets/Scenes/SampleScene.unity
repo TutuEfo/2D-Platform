@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eec0be7c6d8533459c3d9a1cd584818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTrigger: {fileID: 0}
+  damageTrigger: {fileID: 1956580100}
   moveSpeed: 2
   idleDuration: 1.5
   deathImpact: 5

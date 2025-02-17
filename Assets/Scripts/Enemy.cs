@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
         damageTrigger.SetActive(false);
         anim.SetTrigger("hit");
         rb.velocity = new Vector2(rb.velocity.x, deathImpact);
-
+        isDead = true;
 
         if (Random.Range(0,100) < 50)
         {
