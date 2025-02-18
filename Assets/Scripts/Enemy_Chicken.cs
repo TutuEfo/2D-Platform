@@ -61,9 +61,7 @@ public class Enemy_Chicken : Enemy
             return;
         }
 
-        float xValue = player.transform.position.x;
-
-        HandleFlip(xValue);
+        HandleFlip(player.transform.position.x);
 
         rb.velocity = new Vector2(moveSpeed * facingDir, rb.velocity.y);
     }
@@ -91,7 +89,7 @@ public class Enemy_Chicken : Enemy
     {
         base.HandleCollision();
 
-        playerDetected = Physics2D.Raycast(transform.position, Vector2.right *facingDir, detectionRange, whatIsPlayer);
+        playerDetected = Physics2D.Raycast(transform.position, Vector2.right *  facingDir, detectionRange, whatIsPlayer);
     }
 
     protected override void OnDrawGizmos()
