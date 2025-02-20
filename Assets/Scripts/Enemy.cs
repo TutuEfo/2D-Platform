@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected LayerMask whatIsPlayer;
     [SerializeField] protected Transform groundCheck;
     protected bool isGrounded;
-    protected bool isWallDetected;
+    [SerializeField] protected bool isWallDetected;
     protected bool isGroundInFrontDetected;
 
     protected int facingDir = -1;

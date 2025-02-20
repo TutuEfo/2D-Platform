@@ -71,7 +71,7 @@ public class Enemy_Rino : Enemy
         canMove = false;
         moveSpeed = defaultSpeed;
         anim.SetBool("hitWall", true);
-        rb.velocity = new Vector2(impactPower.x * -facingDir, rb.velocity.y);    
+        rb.velocity = new Vector2(impactPower.x * -facingDir, impactPower.y);    
     }
 
     private void ChargeIsOver()
