@@ -195,8 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b443e87c83638ce4eb5561d6c50f12a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  damageTrigger: {fileID: 5503533845710450235}
   moveSpeed: 5
   idleDuration: 1.5
   deathImpact: 5
@@ -206,13 +204,12 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  playerDetectionDistance: 10
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
   groundCheck: {fileID: 357083254034185776}
-  isWallDetected: 0
-  aggroDuration: 1
-  detectionRange: 5
+  aggroDuration: 5
 --- !u!1 &3330313857611457114
 GameObject:
   m_ObjectHideFlags: 0

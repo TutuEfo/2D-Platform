@@ -14621,11 +14621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3154085285254172045, guid: b1bcfaa9d2cc14342ba94b0bd42f11b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 3154085285254172045, guid: b1bcfaa9d2cc14342ba94b0bd42f11b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.01
+      value: -5.72
       objectReference: {fileID: 0}
     - target: {fileID: 3154085285254172045, guid: b1bcfaa9d2cc14342ba94b0bd42f11b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14658,14 +14658,6 @@ PrefabInstance:
     - target: {fileID: 3154085285254172045, guid: b1bcfaa9d2cc14342ba94b0bd42f11b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167688225456518803, guid: b1bcfaa9d2cc14342ba94b0bd42f11b6, type: 3}
-      propertyPath: detectionRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167688225456518803, guid: b1bcfaa9d2cc14342ba94b0bd42f11b6, type: 3}
-      propertyPath: playerDetectionDistance
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15138,11 +15130,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8042326320348007060, guid: b964cdebb30509a41ab03acbb331128c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.427
+      value: 7.45
       objectReference: {fileID: 0}
     - target: {fileID: 8042326320348007060, guid: b964cdebb30509a41ab03acbb331128c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.833
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 8042326320348007060, guid: b964cdebb30509a41ab03acbb331128c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15175,10 +15167,6 @@ PrefabInstance:
     - target: {fileID: 8042326320348007060, guid: b964cdebb30509a41ab03acbb331128c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375337086883751080, guid: b964cdebb30509a41ab03acbb331128c, type: 3}
-      propertyPath: playerDetectionDistance
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8435912052022881454, guid: b964cdebb30509a41ab03acbb331128c, type: 3}
       propertyPath: m_Name

@@ -6,10 +6,8 @@ public class Enemy_Chicken : Enemy
 {
     [Header("Chicken Details")]
     [SerializeField] private float aggroDuration;
-    [SerializeField] private float detectionRange;
 
     private float aggroTimer;
-    private bool playerDetected;
     private bool canFlip = true;
 
     protected override void Update()
@@ -23,7 +21,7 @@ public class Enemy_Chicken : Enemy
             return;
         }
 
-        if (playerDetected)
+        if (isPlayerDetected)
         {
             canMove = true;
             aggroTimer = aggroDuration;

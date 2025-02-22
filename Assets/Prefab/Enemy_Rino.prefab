@@ -378,12 +378,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  playerDetectionDistance: 10
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
   groundCheck: {fileID: 4758843189581908839}
-  isWallDetected: 0
   maxSpeed: 8
   speedUpRate: 1.5
   impactPower: {x: 3, y: 4}
-  detectionRange: 12
