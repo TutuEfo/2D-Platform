@@ -204,7 +204,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  playerDetectionDistance: 10
+  playerDetectionDistance: 8
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
