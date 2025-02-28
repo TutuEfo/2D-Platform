@@ -14351,7 +14351,7 @@ Transform:
   m_GameObject: {fileID: 8279481681347845863}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.86, y: 0, z: 0}
+  m_LocalPosition: {x: -0.96, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15128,7 +15128,7 @@ Transform:
   m_GameObject: {fileID: 2117361787323679429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.54, y: -7.29, z: 0}
+  m_LocalPosition: {x: 4.53, y: -7.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15281,6 +15281,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b183e3bf88a2f8746bbfbb852036cbf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
+  idleDuration: 1.5
+  deathImpact: 5
+  deathRotationSpeed: 150
+  groundCheckDistance: 1.1
+  wallCheckDistance: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  playerDetectionDistance: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundCheck: {fileID: 216425267245991541}
+  bodyPrefab: {fileID: 8386719823595047445, guid: ae7e1727c4aa9254fa3c0f567c780f9d, type: 3}
 --- !u!1001 &8862668309096940417
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,14 +13,14 @@ public class Enemy : MonoBehaviour
 
     [Header("General Info")]
     [SerializeField] protected float moveSpeed = 2f;
-    protected bool canMove;
+    protected bool canMove = true;
     [SerializeField] protected float idleDuration = 1.5f;
     protected float idleTimer;
 
     [Header("Death Details")]
-    [SerializeField] private float deathImpact = 5;
-    [SerializeField] private float deathRotationSpeed = 150;
-    private int deathRotationDirection = 1;
+    [SerializeField] protected float deathImpact = 5;
+    [SerializeField] protected float deathRotationSpeed = 150;
+    protected int deathRotationDirection = 1;
     protected bool isDead;
 
     [Header("Basic Collision")]
