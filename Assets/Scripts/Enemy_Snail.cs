@@ -6,6 +6,7 @@ public class Enemy_Snail : Enemy
 {
     [Header("Snail Details")]
     [SerializeField] private Enemy_SnailBody bodyPrefab;
+    [SerializeField] private float maxSpeed = 10;
     private bool hasBody = true;
 
     protected override void Update()
@@ -36,6 +37,12 @@ public class Enemy_Snail : Enemy
             rb.velocity = Vector2.zero;
             idleDuration = 0;
         }
+        else if (canMove == false && hasBody == false)
+        {
+            canMove = true;
+            anim.SetTrigger("hit");
+            moveSpeed = maxSpeed;
+        }
         else
         {
             base.Die();
@@ -44,7 +51,9 @@ public class Enemy_Snail : Enemy
 
     private void HandleTurnAround()
     {
-        if (!isGroundInFrontDetected || isWallDetected)
+        bool canFlipFromLedge = !isGroundInFrontDetected && hasBody;
+
+        if (canFlipFromLedge || isWallDetected)
         {
             Flip();
             idleTimer = idleDuration;
@@ -76,8 +85,18 @@ public class Enemy_Snail : Enemy
             deathRotationDirection = deathRotationDirection * -1;
         }
 
-        newBody.SetupBody(deathImpact, deathRotationSpeed * deathRotationDirection);
+        newBody.SetupBody(deathImpact, deathRotationSpeed * deathRotationDirection, facingDir);
 
         Destroy(newBody.gameObject, 10);
+    }
+
+    protected override void Flip()
+    {
+        base.Flip();
+
+        if (hasBody == false)
+        {
+            anim.SetTrigger("wallHit");
+        }
     }
 }

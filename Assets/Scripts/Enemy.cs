@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     protected float idleTimer;
 
     [Header("Death Details")]
-    [SerializeField] protected float deathImpact = 5;
+    [SerializeField] protected float deathImpact = 10;
     [SerializeField] protected float deathRotationSpeed = 150;
     protected int deathRotationDirection = 1;
     protected bool isDead;
@@ -114,6 +114,8 @@ public class Enemy : MonoBehaviour
         {
             deathRotationDirection = deathRotationDirection * -1;
         }
+
+        Destroy(gameObject, 10);
     }
 
     private void HandleDeathRotation()
