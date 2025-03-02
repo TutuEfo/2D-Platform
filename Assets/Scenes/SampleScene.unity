@@ -14986,7 +14986,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -14997,7 +14997,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4741440735210145453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15233,7 +15233,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2117361787323679429}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d44c2ae4cbed84a4da803eef5e4cbe94, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -15296,6 +15296,7 @@ MonoBehaviour:
     m_Bits: 128
   groundCheck: {fileID: 216425267245991541}
   bodyPrefab: {fileID: 8386719823595047445, guid: ae7e1727c4aa9254fa3c0f567c780f9d, type: 3}
+  maxSpeed: 10
 --- !u!1001 &8862668309096940417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15363,11 +15364,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3164487982814742153, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.24
+      value: 3.54
       objectReference: {fileID: 0}
     - target: {fileID: 3164487982814742153, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.7
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: 3164487982814742153, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
       propertyPath: m_LocalPosition.z

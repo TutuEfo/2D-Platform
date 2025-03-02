@@ -19,7 +19,7 @@ public class Enemy_Bullet : MonoBehaviour
 
     public void SetVelocity(Vector2 velocity)
     {
-        rb.velocity = velocity;
+        rb.linearVelocity = velocity;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
