@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
 
     private void UpdatePlayersRef()
     {
-        if (player == null)
+        if (player == null && !isDead)
         {
             player = GameManager.instance.player.transform;
         }

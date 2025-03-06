@@ -36,6 +36,7 @@ public class Trap_FallingPlatform : MonoBehaviour
         float randomDelay = Random.Range(0, .6f);
         Invoke(nameof(ActivatePlatform), randomDelay);
     }
+
     /// Alternative Version:
     /// private Ienumerator Start()
     /// {

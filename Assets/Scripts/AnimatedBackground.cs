@@ -26,6 +26,6 @@ public class AnimatedBackground : MonoBehaviour
     [ContextMenu("Update Background")]
     private void UpdateBackgroundTexture()
     {
-        mesh.material.mainTexture = textures[((int)backgroundType)];
+        mesh.sharedMaterial.mainTexture = textures[((int)backgroundType)];
     }
 }
