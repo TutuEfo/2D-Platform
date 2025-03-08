@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -82,8 +83,13 @@ public class GameManager : MonoBehaviour
         GameObject newObject = Instantiate(prefab, newPosition, Quaternion.identity);
     }
 
-    public void LoadTheEndScene()
+    private void LoadTheEndScene()
     {
         SceneManager.LoadScene("TheEnd");
+    }
+
+    public void LevelFinished()
+    {
+        UI_InGame.instance.fadeEffect.ScreenFade(1, 1.5f, LoadTheEndScene);
     }
 }
