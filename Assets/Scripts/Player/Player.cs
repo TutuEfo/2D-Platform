@@ -57,7 +57,8 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
     private int facingDirection = 1;
 
-    [Header("VFX")]
+    [Header("Player Visuals")]
+    [SerializeField] private AnimatorOverrideController[] animators;
     [SerializeField] private GameObject deathVfx;
  
     private void Awake()
@@ -72,6 +73,8 @@ public class Player : MonoBehaviour
     {
         defaultGravityScale = rb.gravityScale;
         RespawnFinished(false);
+
+        anim.runtimeAnimatorController = animators[0];
     }
 
     private void Update()
