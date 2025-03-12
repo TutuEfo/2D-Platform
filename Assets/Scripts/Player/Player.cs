@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
     {
         defaultGravityScale = rb.gravityScale;
         RespawnFinished(false);
-
+        UpdateSkin();
     }
 
     private void Update()
@@ -104,9 +104,16 @@ public class Player : MonoBehaviour
         HandleAnimations();
     }
 
-    private void ChooseSkin(int skinIndex)
+    private void UpdateSkin()
     {
-        anim.runtimeAnimatorController = animators[skinIndex];
+        SkinManager SkinManager = SkinManager.inst;
+
+        if (SkinManager == null)
+        {
+            return;
+        }
+
+        anim.runtimeAnimatorController = animators[SkinManager.choosenSkinId];
     }
 
     private void HandleEnemyDetection()

@@ -15773,26 +15773,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3877541289070786791, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
-      propertyPath: animators.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877541289070786791, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
-      propertyPath: 'animators.Array.data[0]'
-      value: 
-      objectReference: {fileID: 22100000, guid: 57591343d4302bc408057d21484a86ab, type: 2}
-    - target: {fileID: 3877541289070786791, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
-      propertyPath: 'animators.Array.data[1]'
-      value: 
-      objectReference: {fileID: 22100000, guid: 666cde39f794d6346abf4dcb9a6fb0ce, type: 2}
-    - target: {fileID: 3877541289070786791, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
-      propertyPath: 'animators.Array.data[2]'
-      value: 
-      objectReference: {fileID: 22100000, guid: 856b56ac586c6444bada83157f481963, type: 2}
-    - target: {fileID: 3877541289070786791, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
-      propertyPath: 'animators.Array.data[3]'
-      value: 
-      objectReference: {fileID: 22100000, guid: 56e1a0095e988064aa957176a4343669, type: 2}
     - target: {fileID: 9034455644473495453, guid: e2b1b48b68c04e748a648716c5694d50, type: 3}
       propertyPath: m_Name
       value: Player
