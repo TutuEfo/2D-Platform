@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     [Header("Traps")]
     public GameObject arrowPrefab;
 
+    [SerializeField] private GameObject fruitPrefab;
+    private List<Vector3> fruitOriginalPositions = new List<Vector3>();
+    private List<Quaternion> fruitOriginalRotations = new List<Quaternion>();
+
     private void Awake()
     {
         if (instance == null)
@@ -47,7 +51,33 @@ public class GameManager : MonoBehaviour
         Fruit[] allFruits = Object.FindObjectsByType<Fruit>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         // Old Version: Fruit[] allFruits = FindObjectsOfType<Fruit>(); 
         totalFruits = allFruits.Length;
+
+        fruitOriginalPositions.Clear();
+        fruitOriginalRotations.Clear();
+
+        foreach (Fruit fruit in allFruits)
+        {
+            fruitOriginalPositions.Add(fruit.transform.position);
+            fruitOriginalRotations.Add(fruit.transform.rotation);
+        }
     }
+
+    private void RespawnFruits()
+    {
+        Fruit[] allFruits = Object.FindObjectsByType<Fruit>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        foreach (Fruit fruit in allFruits)
+        {
+            Destroy(fruit.gameObject);
+        }
+
+        fruitsCollected = 0;
+
+        for (int i = 0; i < fruitOriginalPositions.Count; i++)
+        {
+            Instantiate(fruitPrefab, fruitOriginalPositions[i], fruitOriginalRotations[i]);
+        }
+    }
+
 
     public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;
 
@@ -56,6 +86,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator RespawnCoroutine()
     {
         yield return new WaitForSeconds(respawnDelay);
+
+        RespawnFruits();
 
         // Since respawnPoint is a "Transform" we write it as a "respawnPoint.position"
         // Alternative way: player = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity).GetComponent<Player>();

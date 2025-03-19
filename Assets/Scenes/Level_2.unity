@@ -526,6 +526,7 @@ MonoBehaviour:
   totalFruits: 0
   canReactivate: 0
   arrowPrefab: {fileID: 4681178671898753165, guid: 5cf6a1afb9a85be43a65e920027d71d3, type: 3}
+  fruitPrefab: {fileID: 2726039935817852735, guid: 23625eec13cab4940a53d7c074454145, type: 3}
 --- !u!1001 &486926346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14352,6 +14353,72 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1987291031
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.068848
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378417019100291782, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378417019100291782, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096917530147051571, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+      propertyPath: m_Name
+      value: Trap_Saw (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 1282813758366039668, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
 --- !u!1 &2121348065
 GameObject:
   m_ObjectHideFlags: 0
@@ -14622,3 +14689,4 @@ SceneRoots:
   - {fileID: 529477855}
   - {fileID: 1058128520}
   - {fileID: 6976254}
+  - {fileID: 1987291031}
