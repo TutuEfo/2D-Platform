@@ -369,7 +369,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1746339854882762340, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 2673718666391616357, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378417019100291782, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 8096917530147051571, guid: b64b7a96293d2774ab4c509cc8cb4c1d, type: 3}
       propertyPath: m_Name
@@ -823,6 +823,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: bulletSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: idleDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: attackCooldown
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: playerDetectionDistance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4216700817982210537, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
       propertyPath: m_Name
       value: Enemy_Trunk (1)
@@ -14271,6 +14291,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: bulletSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: idleDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: attackCooldown
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: playerDetectionDistance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4216700817982210537, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
       propertyPath: m_Name
       value: Enemy_Trunk
@@ -14759,6 +14799,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: bulletSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: idleDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: attackCooldown
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087519853242447153, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
+      propertyPath: playerDetectionDistance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4216700817982210537, guid: b4e59cb596ff9eb4b9f608e0ba6d9c7d, type: 3}
       propertyPath: m_Name
       value: Enemy_Trunk (2)
