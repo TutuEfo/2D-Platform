@@ -37,6 +37,12 @@ public class Trap_FallingPlatform : MonoBehaviour
         Invoke(nameof(ActivatePlatform), randomDelay);
     }
 
+    private void Update()
+    {
+        HandleImpact();
+        HandleMovement();
+    }
+
     /// Alternative Version:
     /// private Ienumerator Start()
     /// {
@@ -59,11 +65,6 @@ public class Trap_FallingPlatform : MonoBehaviour
         wayPoints[1] = transform.position + new Vector3(0, -yOffset, 0);
     }
 
-    private void Update()
-    {
-        HandleImpact();
-        HandleMovement();
-    }
 
     private void HandleMovement()
     {
