@@ -133,6 +133,7 @@ public class Player : MonoBehaviour
             {
                 newEnemy.Die();
                 Jump();
+                canDoubleJump = true;
             }
         }
     }
