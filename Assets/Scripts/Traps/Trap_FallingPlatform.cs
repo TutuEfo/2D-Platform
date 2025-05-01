@@ -23,6 +23,10 @@ public class Trap_FallingPlatform : MonoBehaviour
     [Space]
     [SerializeField] private float fallDelay = .5f;
 
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -35,6 +39,10 @@ public class Trap_FallingPlatform : MonoBehaviour
         SetupWayPoints();
         float randomDelay = Random.Range(0, .6f);
         Invoke(nameof(ActivatePlatform), randomDelay);
+
+        // Save the starting position and rotation
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
     }
 
     private void Update()
